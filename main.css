@@ -1,0 +1,320 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+header{
+    /* background-color: #040d22; */
+    /* 이미지 위에 올라갔기 때문에 백그라운드를 제거해줘도 된다 */
+    position: relative;
+    /* relative를 설정해야 이미지 위에 쌓일 수 있게 함 */
+}
+
+header .container {
+    /* display: flex; */
+    /* align-items: center; */
+    /* 수평정렬 */
+    /* flex부분을 bootstarp에서 class로 설정할 수 있따. */
+    /* d-flex aling-items-center */
+    
+    /* padding-top: 20px; */
+    /* padding-bottom: 20px; */
+    /* 패딩도 boostarp class로 설정가능 */
+    /* py-3 */
+
+    /* <div class="container d-flex align-items-center py-3"> */
+}
+
+header .forms input.form-control{
+    color: white;
+    background-color: rgba(255,255,255,.15) ;
+    /* rgba = a:투명도 */
+    border-color: rgba(255,255,255,.3);
+}
+
+header .forms input.form-control::placeholder{
+    /* ::요소값이다! */
+    color: rgba(255,255,255,.6);
+}
+
+header [data-bs-toggle="offcanvas"] {
+    /* []속성선택자 사용! data-bs-toggle="offcanvas" 있는 요소 타겟 */
+    display: none;
+    /* 보여지지 않는다 */
+}
+
+header .offcanvas .list-group-item{
+    padding: 16px;
+}
+header .offcanvas .list-group-item a{
+    color: black;
+    text-decoration: none;
+    /* 밑줄 삭제 */
+}
+header .offcanvas .list-group-item a:hover{
+    text-decoration: underline;
+    /* 밑줄 생기게 함 */
+}
+
+@media (max-width: 992px) {
+    /* 최대 가로넓이가 992px이하 일때!! */
+    header .logo{
+        /* 회원가입과 햄버거 버튼을 가장 오른쪽으로 붙이기 위해서는 logo에서 flow-grow:1을 해야한다  */
+        flex-grow: 1;
+    }
+    /* header .nav{ */
+        /* display: none; */
+        /* nav 내용이 사라진다 */
+    /* }
+    header .forms input.form-control{
+        display: none;
+    }
+    header .forms .btn-link{
+        display: none;
+    } */
+
+    header .nav,
+    header .forms input.form-control,
+    header .forms .btn-link{
+        display: none;
+    }
+    /* 한번에 묶을 수도 있따*/
+    
+    header [data-bs-toggle="offcanvas"] {
+        display: block;
+    }
+}
+
+section.hero {
+    background-color: #040d22;
+    position: relative;
+    /* relative는 기준이 되는 이미지 이다. absolute는 이동할 주체 */
+    /* 이미지가 넘치는 부분을 잘라낸다 */
+    overflow: hidden;
+}
+
+section.hero .container{
+    padding-top:160px;
+    padding-bottom: 160px;
+    position: relative;
+    /* 더 위에 쌓일 수 있게 해준다 */
+}
+
+section.hero .headline h1{
+    font-size: 68px;
+    font-weight: 700;
+    letter-spacing: -2;
+    /* 글자사이 거리 */
+}
+
+section.hero .headline p{
+    font-size: 26px;
+}
+
+section.hero img.globe{
+    width: 900px;
+    position: absolute;
+    top: -5%;
+    left:46%;
+}
+
+section.hero img.glow {
+    width: 200%;
+    height: 200%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    /* 자신의 가로, 세로높이를 기준으로 절반만큼 복구  */
+}
+
+section.hero .curve{
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+section.youtube {
+
+}
+
+section.youtube .container{
+    padding-top: 90px;
+    padding-bottom: 70px;
+    position: relative;
+    /* 배치의 기준 */
+}
+
+section.youtube img.astronaut{
+    width: 480px;
+    position: absolute;
+    top: -420px;
+    /* 부모 container의 위로 넘어간다! */
+    right: 0;
+}
+
+section.youtube .ratio{
+    border-radius: 10px;
+    /* 모서리 깍기 */
+    overflow: hidden;
+    background-color: black;
+}
+
+@media (max-width:768px) {
+    section.youtube img.astronaut {
+        display: none;
+    }
+}
+/* 크기가 작아지면 우주비행사 이미지 삭제 */
+
+section.features{
+
+}
+
+section.features .container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+section.features .card{
+    color: #627597;
+    border: none;
+}
+
+section.features .card img{
+    /* padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 60px;
+    padding-right: 60px; */
+    /* 위와 같다 위아래/왼쪽오른쪽 */
+    padding: 30px 60px
+}
+
+@media (max-width: 576px) {
+    section.features .card img{
+        padding: 20px 30px;
+    }
+}
+
+section.map {
+
+}
+
+section.map .container{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: #627597;
+}
+
+section.map h1{
+    font-size: 44px;
+    font-weight: 700;
+}
+
+section.map p{
+    font-size: 24px;
+}
+
+section.map #map{
+    /* id는 고유한 값이여야 하기 때문에 앞에 section.map이 없어도 된다 */
+    /* background-color: black; */
+    /* 백그라운드는 사이즈 확인용! */
+    height: 500px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index:1;
+    /* z 축으로 제일 위에 쌓다는다는 개념? 아래 이미지가 가릴 수 있다!*/
+    /* 다른 요소들보다 1단계 위에 있을 수 있다. */
+}
+
+footer {
+ background-color: #040d22;
+ position: relative;
+ margin-top: 20%;
+}
+footer .curve{
+    position: absolute;
+    top: -1px;
+    left: 0;
+    transform: scale(1,-1);
+    /* 사진 반전하는 법(x,y) 1,1이 기본값 -1은 반전 */
+
+}
+
+footer .container{
+
+}
+
+footer img.illustration{
+    width: 100%;
+    /* 컨테이너의 넓이 만큼 */
+    margin-top: -33%;
+    /* 위에 map 컨테이너를 침범한다. */
+    margin-bottom: 50px;
+    transform: scale(-1,1);
+    /* 사진 반전하는 법(x,y) 1,1이 기본값 -1은 반전 */
+}
+
+footer img.logo{
+    opacity: 0.4;
+}
+
+footer h5{
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+}
+
+footer ul li{
+    margin-bottom: 10px;
+
+}
+
+footer ul li a{
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: .3s;
+    /* hover를 통해 마우스를 올리게 되면 회색에서 흰색으로 0.3초에 걸려서 바뀐다. */
+}
+
+footer ul li a:hover{
+    color: white;
+}
+
+footer .site-links{
+    margin: 0;
+    /* margin초기화 해준다. 아래에 흰색 여백이 보였음 */
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.050);
+    display: flex;
+    /* 요소들 수평만들어주기 */
+    justify-content: center;
+    /* 가운데 정렬해주기 */
+    flex-wrap: wrap;
+    /* 줄바꿈처리가 가능하게 해주겠다. nowrap이 기본값 */
+    }
+
+footer .site-links li{
+    color: rgba(255,255,255,0.4);
+    margin:0;
+    /* 마진을 초기화 해준다 위에서 아래 여백이 10px이 들어가서 초기화해줘야 마지막 줄 가운데 위치 */
+    margin-right: 20px;
+    /* 우축여백을 만들어준다. 근데 마지막 5번째는 20px여백이 필요없다 */
+
+}
+
+
+footer .site-links li:last-child{
+    margin-right: 0px;
+    /* 리스트에 마지막 인자에서 우축여백초기화. 근데 마지막 5번째는 20px여백이 필요없다 */
+}
+
+@media (max-width:992px) {
+    footer {
+        text-align: center;
+    }
+    footer img.logo {
+        margin-bottom:50px
+    }
+}
+/* github 로고가 가운데 전체가 되었을 때 아래 ul 들에 50px 공간 준다 */
